@@ -13,37 +13,34 @@ export class UserService {
     }
 
     public getUsers(): User {
-        let user:User={firstName:'oscar',lastName:'fertonani'};
+        let user:User={nombre:'oscar',apellido:'fertonani'};
 
         return user;
     }
 
-    public getUser(id: string): User {
+    public getUser(id: string): Promise<User> {
         /*return new Promise<User>((resolve, reject) => {
-            resolve({firstName:'oscar',lastName:'fertonani'});
+            resolve({firstName:'oscar',apellido:'fertonani'});
         });*/
-        var u:User;
-        this.userDao.findOne().then(
-            (data)=>{u=data;
-                return u;});
-        return u;
+
+       return this.userDao.findOne();
     }
 
     public newUser(user: User): Promise<User> {
         return new Promise<User>((resolve, reject) => {
-            resolve({firstName:'oscar',lastName:'fertonani'});
+            resolve({nombre:'oscar',apellido:'fertonani'});
         });
     }
 
     public updateUser(id: string, user: User): Promise<User> {
         return new Promise<User>((resolve, reject) => {
-            resolve({firstName:'oscar',lastName:'fertonani'});
+            resolve({nombre:'oscar',apellido:'fertonani'});
         });
     }
 
     public deleteUser(id: string): Promise<any> {
         return new Promise<User>((resolve, reject) => {
-            resolve({firstName:'oscar',lastName:'fertonani'});
+            resolve({nombre:'oscar',apellido:'fertonani'});
         });
     }
 }

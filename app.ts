@@ -5,7 +5,7 @@ import { kernel } from './src/config/KernelConf';
 
 // load all injectable entities.
 // the @provide() annotation will then automatically register them.
-import './src/config/loader';
+import './src/controller/loader';
 import { Request,Response,NextFunction } from 'express';
 
 

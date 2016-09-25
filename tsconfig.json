@@ -2,7 +2,10 @@
     "compilerOptions": {
         "target": "es5",
         "lib": ["es6", "dom"],
-        "types": ["reflect-metadata"],
+        "types": ["inversify",
+            "inversify-express-utils",
+            "mocha",
+            "reflect-metadata"],
         "module": "commonjs",
         "moduleResolution": "node",
         "experimentalDecorators": true,

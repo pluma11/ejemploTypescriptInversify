@@ -4,8 +4,6 @@ import {DataSource} from '../config/DataSource';
 import {User} from "../domain/User";
 
 
-
-
 @provide(UserDao)
 export class UserDao {
 
@@ -15,11 +13,12 @@ export class UserDao {
     constructor(@inject(DataSource) private dataSource: DataSource ){
         this.mysequelize=dataSource.mysequelize;
 
-        this.userRepository=this.mysequelize.define('user', {
+        this.userRepository=this.mysequelize.define('user',
+            {
             id: { type: Sequelize.INTEGER, primaryKey: true},
-            firstName: Sequelize.STRING,
-            lastName: Sequelize.STRING
-        });
+            nombre: {type: Sequelize.STRING,field: 'firstName'},
+            apellido: {type: Sequelize.STRING,field: 'lastName'}
+            });
     }
 
     public findOne():Promise<User>{

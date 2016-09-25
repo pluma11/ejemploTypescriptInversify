@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Put, Delete, TYPE } from 'inversify-express-utils';
 import { provideNamed, inject } from '../config/KernelConf';
-import { Request } from 'express';
+import { Request ,Response} from 'express';
 import { User } from '../domain/user';
 import { UserService } from '../service/UserService';
 
@@ -18,8 +18,8 @@ export class UserController {
     }
 
     @Get('/:id')
-    public getUser(request: Request): Promise<User> {
-        return this.userService.getUser(request.params.id);
+    public getUser(request: Request): Promise<User>  {
+        return  Promise.resolve(this.userService.getUser(request.params.id));
     }
 
     @Post('/')
