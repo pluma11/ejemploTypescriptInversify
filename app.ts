@@ -10,6 +10,8 @@ import { Request,Response,NextFunction } from 'express';
 
 
 
+
+
 // start the server
 let server = new InversifyExpressServer(kernel);
 
@@ -33,3 +35,5 @@ app.listen(3000);
 console.log('Server started on port 3000 :)');
 
 exports = module.exports = app;
+
+

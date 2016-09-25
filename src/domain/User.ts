@@ -1,12 +1,7 @@
 import {Domicilio} from  './Domicilio';
 
-export class User {
-
-    public domicilio:Domicilio;
-
-    constructor(
-        public email: string,
-        public name: string,
-        public _id?: string
-    ) { }
+export interface User {
+    id?: number;
+    firstName: string;
+    lastName: string;
 }
